@@ -77,7 +77,6 @@ body {
     .profile_dp, img {
         border-radius: 50%;
         max-width: 20%;
-        max-height: 20%;
     }
     #skill_icons {
         width: 1.9em;
@@ -96,7 +95,6 @@ body {
     .profile_dp, img {
         border-radius: 50%;
         max-width: 30%;
-         max-height: 30%;
     }
     #skill_icons {
         width: 1.5em;
