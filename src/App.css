@@ -1,6 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-
-
 svg {
     width: 1.5rem;
     height: 1.5rem;
@@ -16,6 +14,12 @@ img {
 
 p {
     color: rgb(182, 182, 182);
+}
+
+li>small {
+    cursor: pointer;
+    /* background: #1f1d2b; */
+    /* padding: 0 .3em; */
 }
 
 body {
@@ -45,8 +49,9 @@ body {
 }
 
 .profile_dp {
-    max-width: 10%;
     border: 4px solid var(--bs-primary);
+    width: 7.5rem;
+    height: 7.5rem;
 }
 
 #about_text {
@@ -74,9 +79,9 @@ body {
     .col-3 {
         width: 100%;
     }
-    .profile_dp, img {
-        border-radius: 50%;
-        max-width: 20%;
+    .profile_dp {
+        width: 6rem;
+        height: 6rem;
     }
     #skill_icons {
         width: 1.9em;
@@ -92,9 +97,9 @@ body {
     .col-3, .container {
         width: 100%;
     }
-    .profile_dp, img {
-        border-radius: 50%;
-        max-width: 30%;
+    .profile_dp {
+        width: 5rem;
+        height: 5rem;
     }
     #skill_icons {
         width: 1.5em;
