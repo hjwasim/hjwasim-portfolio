@@ -1,10 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { hjwasim } from '../data'
 import { motion } from "framer-motion"
+import { HiSun } from 'react-icons/hi'
 
 const Profile = () => {
+    const [darkMode, setDarkMode] = useState(false);
+
+
+    const lightMode_toggler = (isChecked) => {
+        setDarkMode(isChecked)
+        if (darkMode) {
+            document.body.classList.remove("dark");
+        } else {
+            document.body.classList.add("dark");
+        }
+    }
+
+
     return (
         <div className="main">
+
             <div className="container py-4">
                 <motion.div animate={{ y: 0 }} initial={{ y: -100 }} className="card p-3 d-flex mt-4 mb-2 flex-column align-items-center justify-content-center">
                     <img alt="" className="profile_dp" src={hjwasim.avatar} />
@@ -18,6 +33,17 @@ const Profile = () => {
                             hjwasim.tagline
                         }
                     </p>
+                    <hr />
+                    <div class="toggle">
+                        <div>
+                            <input type="checkbox" onChange={e => lightMode_toggler(e.target.checked)} class="checkbox" id="chk" />
+                            <label class="label" for="chk">
+                                <div class="ball"></div>
+                            </label>
+                        </div>
+                        <p className="mx-3 my-0">Enable Light Mode <HiSun /> </p>
+                    </div>
+
                 </motion.div>
                 <div className="row">
                     <div className="col-9">
@@ -83,7 +109,7 @@ const Profile = () => {
                             </div>
                             <hr />
                             <div>
-                                <a href={hjwasim.mail.uri} className="d-flex align-items-center text-white">
+                                <a href={hjwasim.mail.uri} className="d-flex align-items-center">
                                     {
                                         hjwasim.mail.icon
                                     }
@@ -99,7 +125,7 @@ const Profile = () => {
 
                                 {
                                     hjwasim.contact.map(list => (
-                                        <a href={list.uri} target="_blank" rel="noreferrer" className="d-flex my-2 align-items-center text-white">
+                                        <a href={list.uri} target="_blank" rel="noreferrer" className="d-flex my-2 align-items-center ">
                                             {
                                                 list.icon
                                             }
@@ -114,7 +140,7 @@ const Profile = () => {
                             <div>Github</div>
                             <hr />
                             <div>
-                                <a href={hjwasim.github.uri} target="_blank" rel="noreferrer" className="d-flex align-items-center text-white">
+                                <a href={hjwasim.github.uri} target="_blank" rel="noreferrer" className="d-flex align-items-center">
                                     {
                                         hjwasim.github.icon
                                     }
@@ -127,13 +153,13 @@ const Profile = () => {
                 </div>
                 <div className="p-3 d-flex my-4 flex-column align-items-center justify-content-center">
                     <div>This Portfolio is done in love 🎉by
-                        <a href={hjwasim.github.uri} target="_blank" rel="noreferrer" className="text-white">
+                        <a href={hjwasim.github.uri} target="_blank" rel="noreferrer" >
                             <small className="mx-2">{hjwasim.name}</small>
                         </a>
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
 
